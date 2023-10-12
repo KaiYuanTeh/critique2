@@ -1,0 +1,54 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 400,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/KaiYuanTeh/DataVisualisation2/main/Data/Life%20expectancy%20continent.csv"
+  },
+  "layer": [
+    {"mark": {"type": "arc", "innerRadius": 20, "stroke": "#fff"}},
+    {
+      "mark": {"type": "text", "radiusOffset": 20},
+      "encoding": {
+        "text": {
+          "field": "Average life expectancy",
+          "type": "quantitative",
+          "format": ".2f"
+        },
+        "color": {"value": "black"}
+      }
+    },
+    {
+      "mark": {"type": "text", "radiusOffset": -80},
+      "encoding": {
+        "text": {"field": "continent", "type": "nominal"},
+        "color": {"value": "black"}
+      }
+    }
+  ],
+  "encoding": {
+    "theta": {
+      "field": "Average life expectancy",
+      "type": "quantitative",
+      "stack": true
+    },
+    "radius": {
+      "field": "Average life expectancy",
+      "scale": {"type": "sqrt", "zero": true, "rangeMin": 20}
+    },
+    "color": {
+      "field": "Average life expectancy",
+      "type": "nominal",
+      "legend": null
+    },
+    "tooltip": [
+      {"field": "continent", "type": "nominal", "title": "Continent"},
+      {
+        "field": "Average life expectancy",
+        "type": "quantitative",
+        "format": ".2f"
+      }
+    ]
+  },
+  "config": {}
+}

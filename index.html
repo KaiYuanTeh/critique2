@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/pure-min.css" integrity="sha384-yHIFVG6ClnONEA5yB5DJXfW2/KC173DIQrYoZMEtBvGzmf0PKiGyNEqe9N6BNDBH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/grids-responsive-min.css">
+
+
+    <link rel="stylesheet" type="text/css" href="styles.css" media="all">
+
+    <title>FIT3179 Data Visualisation 2</title>
+</head>
+
+<body>
+
+    <div class="pure-g">
+
+        <div class="pure-u-1">+
+            <div id="title">
+                LIFE EXPECTANCY
+            </div>
+        </div>
+
+        <div class="pure-u-1-2">
+            <div id="title_description">
+                <p>
+                    Life expectancy is a <span id="bold">statistical measure</span> of the <span id="bold">average number</span><br>
+                    of <span id="bold">years</span> a person can <span id="bold">expect to live</span>.<br><br>
+
+                    Life expectancy is influenced by a number of factors including<br>
+                    access to <span id="bold">healthcare</span>, <span id="bold">education</span>, <span id="bold">genetics</span>, <span id="bold">nutrition</span>, <span id="bold">sanitation</span>, <br>
+                    choice of <span id="bold">lifestyle</span> and et cetera.<br><br>
+                </p>
+            </div>
+        </div>
+        <div class="pure-u-1-2">
+            <div id="title_description">
+                <p>
+                    The chosen dataset for this visualisation was collected from the <br>
+                    <span id="bold">Global Health Observatory (GHO)</span> data respository under the <span id="bold">World <br>
+                    Health Organization (WHO)</span>.<br><br>
+
+                    The dataset collected contains data from year <span id="bold">2000</span> to <span id="bold">2015</span> for <br>
+                    <span id="bold">193 countries</span> around the world.<br><br>
+                </p>
+            </div>
+        </div>
+
+        <h1>_____________________________________________________________________________________________________________</h1>
+    
+
+        <div class="pure-u-1-2"; style="margin-bottom: -85px">
+            <div class="pure-u-3-4">
+                <h4>
+                    AVERAGE LIFE EXPECTANCY FOR <span id="bold">SIX CONTINENETS</span> ACROSS
+                    THE WORLD FROM <span id="bold">2000</span> TO <span id="bold">2015</span>
+                    <br><br>
+                </h4>
+            </div>
+            <p style="font-size: 13.5px">
+                By looking at the graph below, we can tell that the continent <span id="bold">South America</span> 
+                has the <span id="bold">highest</span> value of average life expectancy - <span id="bold">77.65</span> while the continent 
+                <span id="bold">Africa</span> has the <span id="bold">lowest</span> value of average life expectancy - <span id="bold">58.79</span> among all 
+                other continents over the 16 years.<br><br>
+
+                The <span id="bold">difference</span> of the average life expectancy value between <span id="bold">South America</span> 
+                and <span id="bold">Africa</span> is <span id="bold">18.86</span> which is a significant gap. 
+                <br><br>
+            </p>
+            <div id="pie_chart"></div>
+        </div>
+
+        <div class="pure-u-1-2"; style="margin-bottom: -85px">
+            <div class="pure-u-3-4">
+                <h4>
+                    COUNTRIES WITH TOP <span id="bold">5 <span style="color: #3690c0">HIGHEST</span> OR <span style="color: #fd8d3c">LOWEST</span> VALUE OF
+                    AVERAGE LIFE EXPECTANCY ACROSS THE WORLD FROM 
+                    <span id="bold">2000</span> TO <span id="bold">2015</span>
+                    <br>
+                </h4>
+            </div>
+            <p style="font-size: 13.5px">
+                From the graph, we can see that the top <span id="bold">3</span> countries with the <span style="color: #3690c0">highest</span> average
+                 life expectancy value are <span id="bold">Japan - 82.54</span>, followed by <span id="bold">Sweden - 82.52</span> and 
+                <span id="bold">Iceland - 82.44</span>.<br><br>
+
+                 From the graph, we can see that the top <span id="bold">3</span> countries with the <span style="color: #fd8d3c">lowest</span> average
+                 life expectancy value are <span id="bold">Sierra Leone - 46.11</span>, followed by <span id="bold">Central Africa 
+                 Republic - 48.51</span> and <span id="bold">Lesotho - 48.78</span>.
+                 <br><br>
+            </p>
+            <div id="bar_chart"></div>
+        </div>
+
+
+        <div class="pure-u-1-2"; style="margin-bottom: 15px">
+            <div class="pure-u-3-4">
+                <h4 style="margin-top: 28px">
+                    <span id="bold">RANKING</span> AMONG THE TOP <span id="bold">10</span> COUNTRIES WITH THE 
+                    <span id="bold">HIGHEST</span> AVERAGE LIFE EXPECTANCY OVER YEARS
+                    <br>
+                </h4>
+            </div>
+            <p style="font-size: 13.5px">
+                We can observe that <span id="bold">Japan</span> has consistently ranked number <span id="bold">1</span> in terms of average 
+                life expectancy for many years, especially the year <span id="bold">2012</span>, <span id="bold">2013</span>, <span id="bold">2014</span> and <span id="bold">2015</span>
+                which make it hit a four in a row straight for ranked number <span id="bold">1</span>.<br><br>
+
+                Next, we can see that <span id="bold">Norway</span> have seen significant improvements in life 
+                expectancy over the year <span id="bold">2002</span> to <span id="bold">2009</span> as it ranked number <span id="bold">10</span> in year <span id="bold">2002</span>
+                and ranked number <span id="bold">1</span> in year <span id="bold">2009</span>. 
+                <br><br>
+            </p>
+            <div id="bump_chart"></div>
+        </div>
+
+        <div class="pure-u-1-2"; style="margin-bottom: 15px">
+            <div class="pure-u-3-4">
+                <h4 style="margin-top: 28px">
+                    <span id="bold">ADULT MORTALITY RATE</span> IN DIFFERENT COUNTRIES
+                    ACROSS THE WORLD FROM <span id="bold">2000</span> TO <span id="bold">2015</span>
+                    <br>
+                </h4>
+            </div>
+            <p style="font-size: 13.5px">
+                We can see that the adult mortality rates have <span id="bold">decreased</span> in most countries 
+                over the time. <br><br>
+
+                In the year <span id="bold">2000</span>, <span id="bold">Greenland</span> has the <span id="bold">lowest</span> adult mortality rate - <span id="bold">12</span> and 
+                <span id="bold">Zimbabwe</span> has the <span id="bold">highest</span> adult mortality rate - <span id="bold">665</span>.<br><br>
+
+                In the year <span id="bold">2015</span>, <span id="bold">United States of Amerca</span> has the <span id="bold">lowest</span> adult mortality
+                rate - <span id="bold">13</span> and <span id="bold">Lesotho</span> has the <span id="bold">highest</span> adult mortality rate - <span id="bold">484</span>.
+                <br><br>
+            </p>
+            <div id="choropleth_map"></div>
+        </div>
+    </div>
+
+
+<script type="text/javascript">
+
+  var spec1 = "visualization.vl.json";
+  vegaEmbed('#pie_chart', spec1).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  var spec2 = "visualization.vl-2.json";
+  vegaEmbed('#bar_chart', spec2).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+  var spec3 = "visualization.vl-3.json";
+  vegaEmbed('#bump_chart', spec3).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  var spec4 = "visualization.vl-4.json";
+  vegaEmbed('#choropleth_map', spec4).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+</script>
+    
+</body>
+</html>
